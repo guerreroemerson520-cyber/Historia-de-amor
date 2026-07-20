@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Nuestra Historia ❤️</title>
+
+<!-- ==========================================================
+     TIPOGRAFÍAS ELEGANTES (Google Fonts)
+     Great Vibes  -> firma / texto romántico tipo caligrafía
+     Playfair Display -> títulos cinematográficos
+     Cormorant Garamond -> texto de cuerpo elegante
+========================================================== -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==========================================================
+     CAPAS DE FONDO ANIMADO (estrellas, niebla, degradado, bokeh)
+     Todo generado con CSS + JS, sin imágenes externas
+========================================================== -->
+<div class="bg-gradient"></div>
+<canvas id="stars-canvas"></canvas>
+<div class="fog-layer">
+  <span class="fog fog-1"></span>
+  <span class="fog fog-2"></span>
+  <span class="fog fog-3"></span>
+</div>
+<div class="bokeh-layer">
+  <span class="bokeh b1"></span>
+  <span class="bokeh b2"></span>
+  <span class="bokeh b3"></span>
+  <span class="bokeh b4"></span>
+  <span class="bokeh b5"></span>
+</div>
+<div id="particles-layer"></div> <!-- corazones / pétalos / chispas -->
+
+<!-- ==========================================================
+     PANTALLA DE INICIO (soluciona la política de autoplay
+     de los navegadores y da una entrada cinematográfica)
+========================================================== -->
+<div id="start-screen">
+  <div class="start-content">
+    <p class="eyebrow">Una película sobre nosotros</p>
+    <h1 class="start-title">Nuestra Historia</h1>
+    <p class="start-sub">Toca para comenzar</p>
+    <button id="start-btn" class="glass-btn" aria-label="Comenzar experiencia">
+      <span class="heart-icon">❤</span>
+    </button>
+  </div>
+</div>
+
+<!-- ==========================================================
+     ESCENARIO PRINCIPAL — aquí el script inyecta cada escena
+========================================================== -->
+<main id="scene-stage" aria-live="polite"></main>
+
+<!-- ==========================================================
+     WIDGET DE CONTADOR PERMANENTE (aparece tras el inicio)
+========================================================== -->
+<aside id="counter-widget" class="glass-panel hidden">
+  <p class="counter-label">Han pasado</p>
+  <div class="counter-grid">
+    <div class="counter-cell"><span id="c-days">0</span><small>días</small></div>
+    <div class="counter-cell"><span id="c-hours">0</span><small>horas</small></div>
+    <div class="counter-cell"><span id="c-mins">0</span><small>min</small></div>
+    <div class="counter-cell"><span id="c-secs">0</span><small>seg</small></div>
+  </div>
+  <p class="counter-caption">desde que comenzó nuestra historia <span class="heart-icon small">❤</span></p>
+</aside>
+
+<!-- ==========================================================
+     CONTROL DE MÚSICA
+========================================================== -->
+<audio id="bg-music" loop preload="auto">
+  <source src="music/cancion.mp3" type="audio/mpeg">
+</audio>
+<button id="music-toggle" class="glass-btn small hidden" aria-label="Pausar o reproducir música">
+  <span id="music-icon">♪</span>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
